@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Introdução ao R/R Studio</title>
+  <meta name="description" content="Este material complementa o Curso de Introdução ao R">
+  <meta name="generator" content="bookdown 0.5 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Introdução ao R/R Studio" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Este material complementa o Curso de Introdução ao R" />
+  <meta name="github-repo" content="efsilvaa/IntroR_Bookdown" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Introdução ao R/R Studio" />
+  
+  <meta name="twitter:description" content="Este material complementa o Curso de Introdução ao R" />
+  
+
+<meta name="author" content="Eduardo F. Silva">
+
+
+<meta name="date" content="2017-10-23">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="criacao-de-projetos-em-r.html">
+<link rel="next" href="graficos-com-o-ggplot2.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script>
+function uncover(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
+}
+</script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="css\style.css" type="text/css" />
+<link rel="stylesheet" href="css\efsilvaa.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Introdução ao R/RStudio</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prefácio</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#estrutura-do-livro"><i class="fa fa-check"></i>Estrutura do livro</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#solucoes-ocultas"><i class="fa fa-check"></i>Soluções ocultas</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="sobre-o-autor.html"><a href="sobre-o-autor.html"><i class="fa fa-check"></i>Sobre o Autor</a></li>
+<li class="chapter" data-level="1" data-path="Introdução.html"><a href="Introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução ao R</a><ul>
+<li class="chapter" data-level="1.1" data-path="Introdução.html"><a href="Introdução.html#instalacao-e-configuracao"><i class="fa fa-check"></i><b>1.1</b> Instalação e Configuração</a></li>
+<li class="chapter" data-level="1.2" data-path="Introdução.html"><a href="Introdução.html#um-pouco-de-historia"><i class="fa fa-check"></i><b>1.2</b> Um pouco de história</a></li>
+<li class="chapter" data-level="1.3" data-path="Introdução.html"><a href="Introdução.html#sua-primeira-sessao-em-r"><i class="fa fa-check"></i><b>1.3</b> Sua primeira sessão em R</a></li>
+<li class="chapter" data-level="1.4" data-path="Introdução.html"><a href="Introdução.html#iniciando-um-projeto"><i class="fa fa-check"></i><b>1.4</b> Iniciando um projeto</a></li>
+<li class="chapter" data-level="1.5" data-path="Introdução.html"><a href="Introdução.html#entendendo-os-pacotes-em-r"><i class="fa fa-check"></i><b>1.5</b> Entendendo os pacotes em R</a></li>
+</ul></li>
+<li class="part"><span><b>Parte I</b></span></li>
+<li class="chapter" data-level="2" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html"><i class="fa fa-check"></i><b>2</b> R Project - Conceitos Básicos</a><ul>
+<li class="chapter" data-level="2.1" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html#iniciando-pelo-basico"><i class="fa fa-check"></i><b>2.1</b> Iniciando pelo básico</a></li>
+<li class="chapter" data-level="2.2" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html#iniciando-uma-variavel-do-um-valor"><i class="fa fa-check"></i><b>2.2</b> Iniciando uma variável do um valor</a></li>
+<li class="chapter" data-level="2.3" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html#inspecionando-os-valores-das-variaveis"><i class="fa fa-check"></i><b>2.3</b> Inspecionando os valores das variáveis</a></li>
+<li class="chapter" data-level="2.4" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html#como-nomear-suas-variaveis"><i class="fa fa-check"></i><b>2.4</b> Como nomear suas variáveis</a></li>
+<li class="chapter" data-level="2.5" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html#atalhos"><i class="fa fa-check"></i><b>2.5</b> Atalhos</a></li>
+<li class="chapter" data-level="2.6" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html#use-a-assistencia-da-interface"><i class="fa fa-check"></i><b>2.6</b> Use a assistência da interface</a></li>
+<li class="chapter" data-level="2.7" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html#chamando-funcoes"><i class="fa fa-check"></i><b>2.7</b> Chamando funções</a></li>
+<li class="chapter" data-level="2.8" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html#r-markdown"><i class="fa fa-check"></i><b>2.8</b> R Markdown</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="tipos-basicos-de-dados.html"><a href="tipos-basicos-de-dados.html"><i class="fa fa-check"></i><b>3</b> Tipos Básicos de Dados</a><ul>
+<li class="chapter" data-level="3.1" data-path="tipos-basicos-de-dados.html"><a href="tipos-basicos-de-dados.html#numeros"><i class="fa fa-check"></i><b>3.1</b> Números</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="tipos-basicos-de-dados.html"><a href="tipos-basicos-de-dados.html#numerico"><i class="fa fa-check"></i><b>3.1.1</b> Numérico</a></li>
+<li class="chapter" data-level="3.1.2" data-path="tipos-basicos-de-dados.html"><a href="tipos-basicos-de-dados.html#inteiro-raramente-usado"><i class="fa fa-check"></i><b>3.1.2</b> Inteiro (<em>raramente usado</em>)</a></li>
+<li class="chapter" data-level="3.1.3" data-path="tipos-basicos-de-dados.html"><a href="tipos-basicos-de-dados.html#numeros-complexos-uso-nao-muito-comum"><i class="fa fa-check"></i><b>3.1.3</b> Números Complexos (<em>Uso não muito comum</em>)</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="tipos-basicos-de-dados.html"><a href="tipos-basicos-de-dados.html#logico"><i class="fa fa-check"></i><b>3.2</b> Lógico</a></li>
+<li class="chapter" data-level="3.3" data-path="tipos-basicos-de-dados.html"><a href="tipos-basicos-de-dados.html#sequencia-de-caracteres"><i class="fa fa-check"></i><b>3.3</b> Sequência de Caracteres</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html"><i class="fa fa-check"></i><b>4</b> Estruturas de dados</a><ul>
+<li class="chapter" data-level="4.1" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#vetores"><i class="fa fa-check"></i><b>4.1</b> Vetores</a></li>
+<li class="chapter" data-level="4.2" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#criando-vetores"><i class="fa fa-check"></i><b>4.2</b> Criando Vetores</a></li>
+<li class="chapter" data-level="4.3" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#atributos-attributes"><i class="fa fa-check"></i><b>4.3</b> Atributos (Attributes)</a></li>
+<li class="chapter" data-level="4.4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#misturando-objetos"><i class="fa fa-check"></i><b>4.4</b> Misturando Objetos</a></li>
+<li class="chapter" data-level="4.5" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#coercao-explicita"><i class="fa fa-check"></i><b>4.5</b> Coerção explícita</a></li>
+<li class="chapter" data-level="4.6" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#matrizes"><i class="fa fa-check"></i><b>4.6</b> Matrizes</a></li>
+<li class="chapter" data-level="4.7" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#cbind-ing-and-rbind-ing"><i class="fa fa-check"></i><b>4.7</b> <em>cbind-ing</em> and <em>rbind-ing</em></a></li>
+<li class="chapter" data-level="4.8" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#listas-list"><i class="fa fa-check"></i><b>4.8</b> Listas (list)</a></li>
+<li class="chapter" data-level="4.9" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#fator-factor"><i class="fa fa-check"></i><b>4.9</b> Fator (factor)</a></li>
+<li class="chapter" data-level="4.10" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#valores-ausentes-missing-values"><i class="fa fa-check"></i><b>4.10</b> Valores ausentes (Missing Values)</a></li>
+<li class="chapter" data-level="4.11" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#data-frames-finalmente-a-cereja-do-bolo"><i class="fa fa-check"></i><b>4.11</b> Data Frames (Finalmente a cereja do bolo :))</a></li>
+<li class="chapter" data-level="4.12" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#nomes"><i class="fa fa-check"></i><b>4.12</b> Nomes</a></li>
+<li class="chapter" data-level="4.13" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#sumario"><i class="fa fa-check"></i><b>4.13</b> Sumário</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="mais-operacoes-basicas-em-r.html"><a href="mais-operacoes-basicas-em-r.html"><i class="fa fa-check"></i><b>5</b> Mais operações básicas em R</a><ul>
+<li class="chapter" data-level="5.1" data-path="mais-operacoes-basicas-em-r.html"><a href="mais-operacoes-basicas-em-r.html#funcao-sessioninfo"><i class="fa fa-check"></i><b>5.1</b> Função <code>sessionInfo()</code></a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="bancos-de-dados.html"><a href="bancos-de-dados.html"><i class="fa fa-check"></i><b>6</b> Bancos de Dados</a></li>
+<li class="chapter" data-level="7" data-path="criacao-de-projetos-em-r.html"><a href="criacao-de-projetos-em-r.html"><i class="fa fa-check"></i><b>7</b> Criação de Projetos em R</a><ul>
+<li class="chapter" data-level="7.1" data-path="criacao-de-projetos-em-r.html"><a href="criacao-de-projetos-em-r.html#criando-projetos-no-rstudio"><i class="fa fa-check"></i><b>7.1</b> Criando Projetos no RStudio</a><ul>
+<li class="chapter" data-level="7.1.1" data-path="criacao-de-projetos-em-r.html"><a href="criacao-de-projetos-em-r.html#criando-diretorios-no-seu-projeto"><i class="fa fa-check"></i><b>7.1.1</b> Criando diretórios no seu projeto</a></li>
+<li class="chapter" data-level="7.1.2" data-path="criacao-de-projetos-em-r.html"><a href="criacao-de-projetos-em-r.html#scripts-de-analise"><i class="fa fa-check"></i><b>7.1.2</b> Scripts de análise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html"><i class="fa fa-check"></i><b>8</b> Criação de Gráficos Básicos</a><ul>
+<li class="chapter" data-level="8.1" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#sumario-dos-5-numeros"><i class="fa fa-check"></i><b>8.1</b> Sumário dos 5 números</a></li>
+<li class="chapter" data-level="8.2" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#importancia-da-visualizacao-dos-dados"><i class="fa fa-check"></i><b>8.2</b> Importância da visualização dos dados</a></li>
+<li class="chapter" data-level="8.3" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#tipos-basicos-de-graficos"><i class="fa fa-check"></i><b>8.3</b> Tipos básicos de gráficos</a></li>
+<li class="chapter" data-level="8.4" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#uma-variavel-continua"><i class="fa fa-check"></i><b>8.4</b> Uma variávél contínua</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#grafico-de-pontos-scatter"><i class="fa fa-check"></i><b>8.4.1</b> Gráfico de pontos (scatter)</a></li>
+<li class="chapter" data-level="8.4.2" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#histograma"><i class="fa fa-check"></i><b>8.4.2</b> Histograma</a></li>
+<li class="chapter" data-level="8.4.3" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#curva-da-densidade-de-probabilidade"><i class="fa fa-check"></i><b>8.4.3</b> Curva da densidade de probabilidade</a></li>
+<li class="chapter" data-level="8.4.4" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#boxplot"><i class="fa fa-check"></i><b>8.4.4</b> Boxplot</a></li>
+</ul></li>
+<li class="chapter" data-level="8.5" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#variavel-categorica-ou-discreta"><i class="fa fa-check"></i><b>8.5</b> Variável categórica (ou discreta)</a><ul>
+<li class="chapter" data-level="8.5.1" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#grafico-de-barras-total"><i class="fa fa-check"></i><b>8.5.1</b> Gráfico de barras (Total)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.6" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#duas-variaveis-continuas"><i class="fa fa-check"></i><b>8.6</b> Duas Variáveis contínuas</a><ul>
+<li class="chapter" data-level="8.6.1" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#grafico-de-densidade-de-probabilidade-density-plots"><i class="fa fa-check"></i><b>8.6.1</b> Gráfico de densidade de probabilidade (density plots)</a></li>
+<li class="chapter" data-level="8.6.2" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#grafico-de-pontos-xy-scatterplots"><i class="fa fa-check"></i><b>8.6.2</b> Gráfico de pontos x,y (scatterplots)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.7" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#duas-variaves-categoricas"><i class="fa fa-check"></i><b>8.7</b> Duas Variáves categóricas</a><ul>
+<li class="chapter" data-level="8.7.1" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#mosaico-mosaic-plot"><i class="fa fa-check"></i><b>8.7.1</b> Mosaico (Mosaic plot)</a></li>
+<li class="chapter" data-level="8.7.2" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#grafico-de-barras-barplots"><i class="fa fa-check"></i><b>8.7.2</b> Gráfico de Barras (barplots)</a></li>
+<li class="chapter" data-level="8.7.3" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#barras-empillhadas-stacked"><i class="fa fa-check"></i><b>8.7.3</b> Barras Empillhadas (stacked)</a></li>
+<li class="chapter" data-level="8.7.4" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#barras-empillhadas-100-stacked-100"><i class="fa fa-check"></i><b>8.7.4</b> Barras Empillhadas 100% (stacked 100%)</a></li>
+</ul></li>
+<li class="chapter" data-level="8.8" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#duas-variaveis-uma-categorica-e-outra-numerica"><i class="fa fa-check"></i><b>8.8</b> Duas variáveis: Uma categórica e outra numérica</a><ul>
+<li class="chapter" data-level="8.8.1" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#box-plots-variaveis-numericas-por-categoria"><i class="fa fa-check"></i><b>8.8.1</b> Box plots: variáveis numéricas por categoria</a></li>
+<li class="chapter" data-level="8.8.2" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#grafico-de-densidade-de-probabilidade-por-categoria"><i class="fa fa-check"></i><b>8.8.2</b> Gráfico de densidade de probabilidade por categoria</a></li>
+<li class="chapter" data-level="8.8.3" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#media-de-uma-variavel-numerica-considerando-sua-categoria"><i class="fa fa-check"></i><b>8.8.3</b> Média de uma variável numérica considerando sua categoria</a></li>
+</ul></li>
+<li class="chapter" data-level="8.9" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#tres-variaveis-discretas-categorias-ou-fatores-em-r"><i class="fa fa-check"></i><b>8.9</b> Três variáveis discretas (categorias ou fatores em R)</a></li>
+<li class="chapter" data-level="8.10" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#tres-variaveis-uma-numerica-e-duas-categoricas"><i class="fa fa-check"></i><b>8.10</b> Três Variáveis: Uma númérica e duas categóricas</a><ul>
+<li class="chapter" data-level="8.10.1" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#boxplot-considerando-a-interacao-entre-as-duas-variaveis-categoricas"><i class="fa fa-check"></i><b>8.10.1</b> Boxplot considerando a interação entre as duas variáveis categóricas</a></li>
+<li class="chapter" data-level="8.10.2" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#media-da-variavel-numerica-para-cada-par-de-interacao-das-variaveis-categoricas"><i class="fa fa-check"></i><b>8.10.2</b> Média da variável numérica para cada par de interação das variáveis categóricas</a></li>
+<li class="chapter" data-level="8.10.3" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#grafico-de-interacao-interaction-plot"><i class="fa fa-check"></i><b>8.10.3</b> Gráfico de interação (interaction plot)</a></li>
+<li class="chapter" data-level="8.10.4" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#grafico-de-barras"><i class="fa fa-check"></i><b>8.10.4</b> Gráfico de barras</a></li>
+</ul></li>
+<li class="chapter" data-level="8.11" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#tres-variaveis-duas-numericas-e-uma-variavel-categorica"><i class="fa fa-check"></i><b>8.11</b> Três variáveis: Duas numéricas e uma variável categórica</a><ul>
+<li class="chapter" data-level="8.11.1" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#grafico-de-pontos-usando-cor"><i class="fa fa-check"></i><b>8.11.1</b> Gráfico de pontos usando cor</a></li>
+</ul></li>
+<li class="chapter" data-level="8.12" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#tres-variaveis-numericas"><i class="fa fa-check"></i><b>8.12</b> Três variáveis numéricas</a><ul>
+<li class="chapter" data-level="8.12.1" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#graficos-de-linhas"><i class="fa fa-check"></i><b>8.12.1</b> Gráficos de Linhas</a></li>
+<li class="chapter" data-level="8.12.2" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#grafico-de-bolhas"><i class="fa fa-check"></i><b>8.12.2</b> Gráfico de bolhas</a></li>
+<li class="chapter" data-level="8.12.3" data-path="criacao-de-graficos-basicos.html"><a href="criacao-de-graficos-basicos.html#grafico-de-pares"><i class="fa fa-check"></i><b>8.12.3</b> Gráfico de pares</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html"><i class="fa fa-check"></i><b>9</b> Gráficos com o <strong>ggplot2</strong></a><ul>
+<li class="chapter" data-level="9.1" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#introducao"><i class="fa fa-check"></i><b>9.1</b> Introdução</a></li>
+<li class="chapter" data-level="9.2" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#gramatica-dos-graficos-wilkinson2005"><i class="fa fa-check"></i><b>9.2</b> Gramática dos gráficos <span class="citation">(Wilkinson <a href="#ref-Wilkinson2005">2005</a>)</span></a></li>
+<li class="chapter" data-level="9.3" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#primeiro-exemplo"><i class="fa fa-check"></i><b>9.3</b> Primeiro exemplo</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#dados-housing-prices"><i class="fa fa-check"></i><b>9.3.1</b> Dados: “<em>Housing prices</em>”</a></li>
+<li class="chapter" data-level="9.3.2" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#ggplot2-vs-base"><i class="fa fa-check"></i><b>9.3.2</b> <strong>ggplot2</strong> VS Base</a></li>
+<li class="chapter" data-level="9.3.3" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#ggplot2-vs-base-agora-com-graficos-mais-complexos"><i class="fa fa-check"></i><b>9.3.3</b> <em>ggplot2</em> VS <em>base</em> agora com gráficos mais complexos:</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#estrutura-para-montagem-de-um-grafico"><i class="fa fa-check"></i><b>9.4</b> Estrutura para montagem de um gráfico</a></li>
+<li class="chapter" data-level="9.5" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#mapeamento-visual-e-geometrias-aesthetic-mapping-and-geometrics"><i class="fa fa-check"></i><b>9.5</b> Mapeamento Visual e geometrias (Aesthetic Mapping and geometrics)</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#aesthetic-mapping"><i class="fa fa-check"></i><b>9.5.1</b> Aesthetic Mapping</a></li>
+<li class="chapter" data-level="9.5.2" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#objetos-geometricos-geom"><i class="fa fa-check"></i><b>9.5.2</b> Objetos geométricos (<code>geom</code>)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.6" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#pontos-scatterplot"><i class="fa fa-check"></i><b>9.6</b> Pontos (Scatterplot)</a></li>
+<li class="chapter" data-level="9.7" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#linhas-ex.-regressao-linear"><i class="fa fa-check"></i><b>9.7</b> Linhas (Ex. Regressão linear)</a></li>
+<li class="chapter" data-level="9.8" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#smoothers"><i class="fa fa-check"></i><b>9.8</b> Smoothers</a></li>
+<li class="chapter" data-level="9.9" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#texto-label-points"><i class="fa fa-check"></i><b>9.9</b> Texto (Label Points)</a></li>
+<li class="chapter" data-level="9.10" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#aesthetic-mapping-vs-assignment"><i class="fa fa-check"></i><b>9.10</b> Aesthetic Mapping VS Assignment</a></li>
+<li class="chapter" data-level="9.11" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#exercicio-i"><i class="fa fa-check"></i><b>9.11</b> Exercicio I</a></li>
+<li class="chapter" data-level="9.12" data-path="graficos-com-o-ggplot2.html"><a href="graficos-com-o-ggplot2.html#recursos-adicionais"><i class="fa fa-check"></i><b>9.12</b> Recursos adicionais</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="manipulando-dados.html"><a href="manipulando-dados.html"><i class="fa fa-check"></i><b>10</b> Manipulando Dados</a><ul>
+<li class="chapter" data-level="10.1" data-path="manipulando-dados.html"><a href="manipulando-dados.html#tibbles"><i class="fa fa-check"></i><b>10.1</b> Tibbles</a><ul>
+<li class="chapter" data-level="10.1.1" data-path="manipulando-dados.html"><a href="manipulando-dados.html#usando-tibbles"><i class="fa fa-check"></i><b>10.1.1</b> Usando <code>tibbles</code></a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="manipulando-dados.html"><a href="manipulando-dados.html#dados"><i class="fa fa-check"></i><b>10.2</b> Dados</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="manipulando-dados.html"><a href="manipulando-dados.html#carregando-os-dados"><i class="fa fa-check"></i><b>10.2.1</b> Carregando os dados</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="manipulando-dados.html"><a href="manipulando-dados.html#funcoes-basicas"><i class="fa fa-check"></i><b>10.3</b> Funções básicas</a></li>
+<li class="chapter" data-level="10.4" data-path="manipulando-dados.html"><a href="manipulando-dados.html#filtrando-registros-linhas"><i class="fa fa-check"></i><b>10.4</b> Filtrando registros (linhas)</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="manipulando-dados.html"><a href="manipulando-dados.html#exercicios"><i class="fa fa-check"></i><b>10.4.1</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="manipulando-dados.html"><a href="manipulando-dados.html#organizando-registros-linhas"><i class="fa fa-check"></i><b>10.5</b> Organizando registros (linhas)</a><ul>
+<li class="chapter" data-level="10.5.1" data-path="manipulando-dados.html"><a href="manipulando-dados.html#exercicios-1"><i class="fa fa-check"></i><b>10.5.1</b> Exercícios</a></li>
+</ul></li>
+<li class="chapter" data-level="10.6" data-path="manipulando-dados.html"><a href="manipulando-dados.html#selecionando-variaveis-colunas"><i class="fa fa-check"></i><b>10.6</b> Selecionando variáveis (colunas)</a><ul>
+<li class="chapter" data-level="10.6.1" data-path="manipulando-dados.html"><a href="manipulando-dados.html#funcoes-de-apoio-em-select"><i class="fa fa-check"></i><b>10.6.1</b> Funções de apoio em <code>select()</code></a></li>
+<li class="chapter" data-level="10.6.2" data-path="manipulando-dados.html"><a href="manipulando-dados.html#exercicio"><i class="fa fa-check"></i><b>10.6.2</b> Exercício</a></li>
+</ul></li>
+<li class="chapter" data-level="10.7" data-path="manipulando-dados.html"><a href="manipulando-dados.html#criando-novas-variaveis"><i class="fa fa-check"></i><b>10.7</b> Criando novas variáveis</a><ul>
+<li class="chapter" data-level="10.7.1" data-path="manipulando-dados.html"><a href="manipulando-dados.html#exercicios-2"><i class="fa fa-check"></i><b>10.7.1</b> Exercícios:</a></li>
+</ul></li>
+<li class="chapter" data-level="10.8" data-path="manipulando-dados.html"><a href="manipulando-dados.html#sumarizando-dados-grupados"><i class="fa fa-check"></i><b>10.8</b> Sumarizando dados grupados</a></li>
+<li class="chapter" data-level="10.9" data-path="manipulando-dados.html"><a href="manipulando-dados.html#pipes"><i class="fa fa-check"></i><b>10.9</b> Pipes</a></li>
+<li class="chapter" data-level="10.10" data-path="manipulando-dados.html"><a href="manipulando-dados.html#dados-ausentes"><i class="fa fa-check"></i><b>10.10</b> Dados ausentes</a><ul>
+<li class="chapter" data-level="10.10.1" data-path="manipulando-dados.html"><a href="manipulando-dados.html#contando-os-na"><i class="fa fa-check"></i><b>10.10.1</b> Contando os NA</a></li>
+</ul></li>
+<li class="chapter" data-level="10.11" data-path="manipulando-dados.html"><a href="manipulando-dados.html#outros-exemplos-de-funcoes-agregadoras"><i class="fa fa-check"></i><b>10.11</b> Outros exemplos de funções agregadoras</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introdução ao R/R Studio</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="criacao-de-graficos-basicos" class="section level1">
+<h1><span class="header-section-number">Unidade 8</span> Criação de Gráficos Básicos</h1>
+<p>O objetivo dessa sessão é a familiarização com os tipos básicos de gráfico que podem ser usados para descrever o comportamento e o relacionamento entre os dados de um estudo estatístico.</p>
+<div id="sumario-dos-5-numeros" class="section level2">
+<h2><span class="header-section-number">8.1</span> Sumário dos 5 números</h2>
+<p>O sumário dos 5 números é conhecido como um conjunto de estatísticas descritivas que revelam os percintis gerais mais significativos em uma amostra de dados. Estes são:</p>
+<pre><code>1. Mínimo
+2. Primeiro quartil
+3. Mediana
+4. Terceiro quartil
+5. Máximo</code></pre>
+<p>Por exemplo, em R podemos obter esse sumário por meio do comando <code>summary</code>. Vamos carregar os dados “cars” que apresenta a velocidade e a distância de parada de alguns carros (gravado em 1920!).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">help</span>(<span class="st">&quot;cars&quot;</span>)
+<span class="kw">data</span>(<span class="st">&quot;cars&quot;</span>)
+<span class="kw">summary</span>(cars)</code></pre></div>
+</div>
+<div id="importancia-da-visualizacao-dos-dados" class="section level2">
+<h2><span class="header-section-number">8.2</span> Importância da visualização dos dados</h2>
+<p>Apesar das várias medidas estatísticas descritivas disponível, a Figura <a href="criacao-de-graficos-basicos.html#fig:dinoFig">8.1</a> mostra porque a visualização dos dados é <strong>muito</strong> importante.</p>
+<div class="figure"><span id="fig:dinoFig"></span>
+<img src="figuras/DinoSequential.gif" alt="Artigo *Same Stats, Diferent Graphs* [@Matejka2017]"  />
+<p class="caption">
+Figura 8.1: Artigo <em>Same Stats, Diferent Graphs</em> <span class="citation">(Matejka and Fitzmaurice <a href="#ref-Matejka2017">2017</a>)</span>
+</p>
+</div>
+</div>
+<div id="tipos-basicos-de-graficos" class="section level2">
+<h2><span class="header-section-number">8.3</span> Tipos básicos de gráficos<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a></h2>
+<p>Inicialmente, será necessário simular alguns dados para serem usados como fonte na geração de gráficos. Os dados serão armazenados em um <em>data frame</em> contendo 3 variáveis categóricas (<em>fatores em R</em>) e 4 variáveis contínuas.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">## Simulando os dados
+
+## 3 variáveis categóricas
+FacVar1 =<span class="st"> </span><span class="kw">as.factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;level1&quot;</span>, <span class="st">&quot;level2&quot;</span>), <span class="dv">25</span>))
+FacVar2 =<span class="st"> </span><span class="kw">as.factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;levelA&quot;</span>, <span class="st">&quot;levelB&quot;</span>, <span class="st">&quot;levelC&quot;</span>), <span class="dv">17</span>)[<span class="op">-</span><span class="dv">51</span>])
+FacVar3 =<span class="st"> </span><span class="kw">as.factor</span>(<span class="kw">rep</span>(<span class="kw">c</span>(<span class="st">&quot;levelI&quot;</span>, <span class="st">&quot;levelII&quot;</span>, <span class="st">&quot;levelIII&quot;</span>, <span class="st">&quot;levelIV&quot;</span>), <span class="dv">13</span>)[<span class="op">-</span><span class="kw">c</span>(<span class="dv">51</span><span class="op">:</span><span class="dv">52</span>)])
+
+## 4 variáveis númericas
+<span class="kw">set.seed</span>(<span class="dv">123</span>)    <span class="co"># referência para uniformizar as variáveis geradas</span>
+
+NumVar1 =<span class="st"> </span><span class="kw">round</span>(<span class="kw">rnorm</span>(<span class="dt">n =</span> <span class="dv">50</span>, <span class="dt">mean =</span> <span class="dv">1000</span>, <span class="dt">sd =</span> <span class="dv">50</span>), <span class="dt">digits =</span> <span class="dv">2</span>)  ## Distribuição Normal
+NumVar2 =<span class="st"> </span><span class="kw">round</span>(<span class="kw">runif</span>(<span class="dt">n =</span> <span class="dv">50</span>, <span class="dt">min =</span> <span class="dv">500</span>, <span class="dt">max =</span> <span class="dv">1500</span>), <span class="dt">digits =</span> <span class="dv">2</span>)  ## Distribuição Uniforme
+NumVar3 =<span class="st"> </span><span class="kw">round</span>(<span class="kw">rexp</span>(<span class="dt">n =</span> <span class="dv">50</span>, <span class="dt">rate =</span> <span class="fl">0.001</span>))  ## Distribuição exponencial
+NumVar4 =<span class="st"> </span><span class="dv">2001</span><span class="op">:</span><span class="dv">2050</span>
+
+simData =<span class="st"> </span><span class="kw">data.frame</span>(FacVar1, FacVar2, FacVar3, NumVar1, NumVar2, NumVar3, NumVar4)</code></pre></div>
+</div>
+<div id="uma-variavel-continua" class="section level2">
+<h2><span class="header-section-number">8.4</span> Uma variávél contínua</h2>
+<div id="grafico-de-pontos-scatter" class="section level3">
+<h3><span class="header-section-number">8.4.1</span> Gráfico de pontos (scatter)</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>NumVar1, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>)  ## Index plot</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+</div>
+<div id="histograma" class="section level3">
+<h3><span class="header-section-number">8.4.2</span> Histograma</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(simData<span class="op">$</span>NumVar1)  ## histogram</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+</div>
+<div id="curva-da-densidade-de-probabilidade" class="section level3">
+<h3><span class="header-section-number">8.4.3</span> Curva da densidade de probabilidade</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">density</span>(simData<span class="op">$</span>NumVar1))  ## Kernel density plot</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+</div>
+<div id="boxplot" class="section level3">
+<h3><span class="header-section-number">8.4.4</span> Boxplot</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(simData<span class="op">$</span>NumVar1)  ## box plot</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+</div>
+</div>
+<div id="variavel-categorica-ou-discreta" class="section level2">
+<h2><span class="header-section-number">8.5</span> Variável categórica (ou discreta)</h2>
+<div id="grafico-de-barras-total" class="section level3">
+<h3><span class="header-section-number">8.5.1</span> Gráfico de barras (Total)</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>FacVar3)  ## bar plot</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+</div>
+</div>
+<div id="duas-variaveis-continuas" class="section level2">
+<h2><span class="header-section-number">8.6</span> Duas Variáveis contínuas</h2>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>NumVar1, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="kw">max</span>(simData<span class="op">$</span>NumVar1, simData<span class="op">$</span>NumVar2)))  ## index plot with one variable
+<span class="kw">lines</span>(simData<span class="op">$</span>NumVar2, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)  ## add another variable</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<div id="grafico-de-densidade-de-probabilidade-density-plots" class="section level3">
+<h3><span class="header-section-number">8.6.1</span> Gráfico de densidade de probabilidade (density plots)</h3>
+<p>Exemplo de <a href="https://stat.ethz.ch/pipermail/r-help/2006-August/111865.html" class="uri">https://stat.ethz.ch/pipermail/r-help/2006-August/111865.html</a>, onde um gráfico “vazio” é produzido e depois preeenchido com linhas (função <code>lines()</code>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dv1 =<span class="st"> </span><span class="kw">density</span>(simData<span class="op">$</span>NumVar1)
+dv2 =<span class="st"> </span><span class="kw">density</span>(simData<span class="op">$</span>NumVar2)
+<span class="kw">plot</span>(<span class="kw">range</span>(dv1<span class="op">$</span>x, dv2<span class="op">$</span>x), <span class="kw">range</span>(dv1<span class="op">$</span>y, dv2<span class="op">$</span>y), <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>, <span class="dt">xlab =</span> <span class="st">&quot;NumVar1(red) and NumVar2 (blue)&quot;</span>, 
+    <span class="dt">ylab =</span> <span class="st">&quot;Density&quot;</span>)
+<span class="kw">lines</span>(dv1, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)
+<span class="kw">lines</span>(dv2, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+</div>
+<div id="grafico-de-pontos-xy-scatterplots" class="section level3">
+<h3><span class="header-section-number">8.6.2</span> Gráfico de pontos x,y (scatterplots)</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>NumVar1, simData<span class="op">$</span>NumVar2)</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+</div>
+</div>
+<div id="duas-variaves-categoricas" class="section level2">
+<h2><span class="header-section-number">8.7</span> Duas Variáves categóricas</h2>
+<div id="mosaico-mosaic-plot" class="section level3">
+<h3><span class="header-section-number">8.7.1</span> Mosaico (Mosaic plot)</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">table</span>(simData<span class="op">$</span>FacVar2, simData<span class="op">$</span>FacVar3))</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+</div>
+<div id="grafico-de-barras-barplots" class="section level3">
+<h3><span class="header-section-number">8.7.2</span> Gráfico de Barras (barplots)</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bartable =<span class="st"> </span><span class="kw">table</span>(simData<span class="op">$</span>FacVar2, simData<span class="op">$</span>FacVar3)  ## get the cross tab
+<span class="kw">barplot</span>(bartable, <span class="dt">beside =</span> <span class="ot">TRUE</span>, <span class="dt">legend =</span> <span class="kw">levels</span>(<span class="kw">unique</span>(simData<span class="op">$</span>FacVar2)))  ## plot</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+</div>
+<div id="barras-empillhadas-stacked" class="section level3">
+<h3><span class="header-section-number">8.7.3</span> Barras Empillhadas (stacked)</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(bartable, <span class="dt">legend =</span> <span class="kw">levels</span>(<span class="kw">unique</span>(simData<span class="op">$</span>FacVar2)))  ## stacked</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
+</div>
+<div id="barras-empillhadas-100-stacked-100" class="section level3">
+<h3><span class="header-section-number">8.7.4</span> Barras Empillhadas 100% (stacked 100%)</h3>
+<p>Transformando a tabela para proporções</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(bartable, <span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,
+        <span class="dt">legend =</span> <span class="kw">levels</span>(<span class="kw">unique</span>(simData<span class="op">$</span>FacVar2)))  ## usando prop.table</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+</div>
+</div>
+<div id="duas-variaveis-uma-categorica-e-outra-numerica" class="section level2">
+<h2><span class="header-section-number">8.8</span> Duas variáveis: Uma categórica e outra numérica</h2>
+<div id="box-plots-variaveis-numericas-por-categoria" class="section level3">
+<h3><span class="header-section-number">8.8.1</span> Box plots: variáveis numéricas por categoria</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>FacVar1, simData<span class="op">$</span>NumVar1)</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+</div>
+<div id="grafico-de-densidade-de-probabilidade-por-categoria" class="section level3">
+<h3><span class="header-section-number">8.8.2</span> Gráfico de densidade de probabilidade por categoria</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">level1 =<span class="st"> </span>simData[simData<span class="op">$</span>FacVar1 <span class="op">==</span><span class="st"> &quot;level1&quot;</span>, ]
+level2 =<span class="st"> </span>simData[simData<span class="op">$</span>FacVar1 <span class="op">==</span><span class="st"> &quot;level2&quot;</span>, ]
+
+dv3 =<span class="st"> </span><span class="kw">density</span>(level1<span class="op">$</span>NumVar1)
+dv4 =<span class="st"> </span><span class="kw">density</span>(level2<span class="op">$</span>NumVar1)
+
+<span class="kw">plot</span>(<span class="kw">range</span>(dv3<span class="op">$</span>x, dv4<span class="op">$</span>x), <span class="kw">range</span>(dv3<span class="op">$</span>y, dv4<span class="op">$</span>y),
+     <span class="dt">type =</span> <span class="st">&quot;n&quot;</span>,
+     <span class="dt">xlab =</span> <span class="st">&quot;NumVar1 at Level1 (red) and NumVar1 at Level2 (blue)&quot;</span>, 
+     <span class="dt">ylab =</span> <span class="st">&quot;Density&quot;</span>)
+
+<span class="kw">lines</span>(dv3, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)
+<span class="kw">lines</span>(dv4, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
+</div>
+<div id="media-de-uma-variavel-numerica-considerando-sua-categoria" class="section level3">
+<h3><span class="header-section-number">8.8.3</span> Média de uma variável numérica considerando sua categoria</h3>
+<p>Verifique como funciona <code>aggregate()</code>, e qual é o retorno de cada função usada como argumento.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list</span>(simData<span class="op">$</span>FacVar3)
+<span class="kw">aggregate</span>(simData<span class="op">$</span>NumVar1, <span class="kw">list</span>(simData<span class="op">$</span>FacVar3), mean)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">meanagg =<span class="st"> </span><span class="kw">aggregate</span>(simData<span class="op">$</span>NumVar1, <span class="kw">list</span>(simData<span class="op">$</span>FacVar3), mean)
+meanagg</code></pre></div>
+<pre><code>##    Group.1         x
+## 1   levelI  998.8154
+## 2  levelII  992.0538
+## 3 levelIII 1010.3125
+## 4  levelIV 1006.7492</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dotchart</span>(meanagg<span class="op">$</span>x, <span class="dt">labels =</span> meanagg<span class="op">$</span>Group.<span class="dv">1</span>)  ## Dot Chart </code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
+<p>Gráfico de barras usando a média</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(meanagg<span class="op">$</span>x, <span class="dt">names.arg =</span> meanagg<span class="op">$</span>Group.<span class="dv">1</span>)  ## Bar plot </code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<blockquote>
+<p>Questão: O gráfico anterior é aproproado para comparar as médias (um valor pontual)? Escolha um gráfico melhor :)</p>
+</blockquote>
+</div>
+</div>
+<div id="tres-variaveis-discretas-categorias-ou-fatores-em-r" class="section level2">
+<h2><span class="header-section-number">8.9</span> Três variáveis discretas (categorias ou fatores em R)</h2>
+<p>Arrumando os gráficos matricialmente com a função <code>par()</code></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+
+bar1table =<span class="st"> </span><span class="kw">table</span>(level1<span class="op">$</span>FacVar2, level1<span class="op">$</span>FacVar3)
+<span class="kw">barplot</span>(bar1table, <span class="dt">beside =</span> <span class="ot">TRUE</span>, <span class="dt">main =</span> <span class="st">&quot;FacVar1=level1&quot;</span>)
+
+bar2table =<span class="st"> </span><span class="kw">table</span>(level2<span class="op">$</span>FacVar2, level2<span class="op">$</span>FacVar3)
+
+<span class="kw">barplot</span>(bar2table, <span class="dt">beside =</span> <span class="ot">TRUE</span>, <span class="dt">main =</span> <span class="st">&quot;FacVar1=level2&quot;</span>,
+        <span class="dt">legend =</span> <span class="kw">levels</span>(<span class="kw">unique</span>(level2<span class="op">$</span>FacVar2)))</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)) <span class="co">#retornando ao normal</span></code></pre></div>
+</div>
+<div id="tres-variaveis-uma-numerica-e-duas-categoricas" class="section level2">
+<h2><span class="header-section-number">8.10</span> Três Variáveis: Uma númérica e duas categóricas</h2>
+<div id="boxplot-considerando-a-interacao-entre-as-duas-variaveis-categoricas" class="section level3">
+<h3><span class="header-section-number">8.10.1</span> Boxplot considerando a interação entre as duas variáveis categóricas</h3>
+<p>Considerando que cada variável aleatória tem 3 categorias, existem seis pares possíves, cada um podendo influenciar a variável contínua de maneira distinta.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(NumVar1 <span class="op">~</span><span class="st"> </span><span class="kw">interaction</span>(FacVar1, FacVar2), <span class="dt">data =</span> simData)</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+</div>
+<div id="media-da-variavel-numerica-para-cada-par-de-interacao-das-variaveis-categoricas" class="section level3">
+<h3><span class="header-section-number">8.10.2</span> Média da variável numérica para cada par de interação das variáveis categóricas</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">meanaggg =<span class="st"> </span><span class="kw">aggregate</span>(simData<span class="op">$</span>NumVar1, <span class="kw">list</span>(simData<span class="op">$</span>FacVar1, simData<span class="op">$</span>FacVar2), 
+    mean)
+meanaggg =<span class="st"> </span>meanaggg[<span class="kw">order</span>(meanaggg<span class="op">$</span>Group.<span class="dv">1</span>), ]
+meanaggg<span class="op">$</span>color[meanaggg<span class="op">$</span>Group.<span class="dv">2</span> <span class="op">==</span><span class="st"> &quot;levelA&quot;</span>] =<span class="st"> &quot;red&quot;</span>
+meanaggg<span class="op">$</span>color[meanaggg<span class="op">$</span>Group.<span class="dv">2</span> <span class="op">==</span><span class="st"> &quot;levelB&quot;</span>] =<span class="st"> &quot;blue&quot;</span>
+meanaggg<span class="op">$</span>color[meanaggg<span class="op">$</span>Group.<span class="dv">2</span> <span class="op">==</span><span class="st"> &quot;levelC&quot;</span>] =<span class="st"> &quot;darkgreen&quot;</span>
+meanaggg</code></pre></div>
+<pre><code>##   Group.1 Group.2         x     color
+## 1  level1  levelA 1004.8489       red
+## 3  level1  levelB  996.3175      blue
+## 5  level1  levelC 1011.7713 darkgreen
+## 2  level2  levelA 1004.5125       red
+## 4  level2  levelB  989.9144      blue
+## 6  level2  levelC 1004.0450 darkgreen</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dotchart</span>(meanaggg<span class="op">$</span>x, <span class="dt">labels =</span> meanaggg<span class="op">$</span>Group.<span class="dv">2</span>, <span class="dt">groups =</span> meanaggg<span class="op">$</span>Group.<span class="dv">1</span>, <span class="dt">color =</span> meanaggg<span class="op">$</span>color)  ## dotchart</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+</div>
+<div id="grafico-de-interacao-interaction-plot" class="section level3">
+<h3><span class="header-section-number">8.10.3</span> Gráfico de interação (interaction plot)</h3>
+<p>Uma categoria <em>eixo x</em> e a outra no símbolo utilizado.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">interaction.plot</span>(meanaggg<span class="op">$</span>Group.<span class="dv">2</span>, meanaggg<span class="op">$</span>Group.<span class="dv">1</span>, meanaggg<span class="op">$</span>x, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>,
+                 <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>), <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">18</span>, <span class="dv">24</span>))  ## interaction plot - line plots of means</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+</div>
+<div id="grafico-de-barras" class="section level3">
+<h3><span class="header-section-number">8.10.4</span> Gráfico de barras</h3>
+<p>Veja a dificuldade de identificar tais variações em um gráfico de barras</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">2</span>))
+meanaggg</code></pre></div>
+<pre><code>##   Group.1 Group.2         x     color
+## 1  level1  levelA 1004.8489       red
+## 3  level1  levelB  996.3175      blue
+## 5  level1  levelC 1011.7713 darkgreen
+## 2  level2  levelA 1004.5125       red
+## 4  level2  levelB  989.9144      blue
+## 6  level2  levelC 1004.0450 darkgreen</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">level1 =<span class="st"> </span>meanaggg[meanaggg<span class="op">$</span>Group.<span class="dv">1</span> <span class="op">==</span><span class="st"> &quot;level1&quot;</span>, ]
+level2 =<span class="st"> </span>meanaggg[meanaggg<span class="op">$</span>Group.<span class="dv">1</span> <span class="op">==</span><span class="st"> &quot;level2&quot;</span>, ]
+
+<span class="kw">barplot</span>(level1<span class="op">$</span>x, <span class="dt">names.arg =</span> level1<span class="op">$</span>Group.<span class="dv">2</span>, <span class="dt">main =</span> <span class="st">&quot;FacVar1=level1&quot;</span>)
+<span class="kw">barplot</span>(level2<span class="op">$</span>x, <span class="dt">names.arg =</span> level2<span class="op">$</span>Group.<span class="dv">2</span>, <span class="dt">main =</span> <span class="st">&quot;FacVar1=level2&quot;</span>)</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</code></pre></div>
+</div>
+</div>
+<div id="tres-variaveis-duas-numericas-e-uma-variavel-categorica" class="section level2">
+<h2><span class="header-section-number">8.11</span> Três variáveis: Duas numéricas e uma variável categórica</h2>
+<div id="grafico-de-pontos-usando-cor" class="section level3">
+<h3><span class="header-section-number">8.11.1</span> Gráfico de pontos usando cor</h3>
+<p>Aqui a cor é utilizada para identificar o <em>valor</em> da variável categorica</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>NumVar1, simData<span class="op">$</span>NumVar2, <span class="dt">col =</span> simData<span class="op">$</span>FacVar1)
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">levels</span>(simData<span class="op">$</span>FacVar1), <span class="dt">fill =</span> simData<span class="op">$</span>FacVar1)</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Usando pontos sólidos para melhorar a visiualização</span>
+<span class="kw">plot</span>(simData<span class="op">$</span>NumVar1, simData<span class="op">$</span>NumVar2, <span class="dt">col =</span> simData<span class="op">$</span>FacVar1, <span class="dt">pch =</span> <span class="dv">19</span>)
+<span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">levels</span>(simData<span class="op">$</span>FacVar1), <span class="dt">fill =</span> simData<span class="op">$</span>FacVar1)</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-71-2.png" width="672" /></p>
+</div>
+</div>
+<div id="tres-variaveis-numericas" class="section level2">
+<h2><span class="header-section-number">8.12</span> Três variáveis numéricas</h2>
+<div id="graficos-de-linhas" class="section level3">
+<h3><span class="header-section-number">8.12.1</span> Gráficos de Linhas</h3>
+<p>Considerando que NumVar4 varia de 2001 até 2050, vamos assumir que a mesma representaria uma data aque será usada no eixo x</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>NumVar4, simData<span class="op">$</span>NumVar1, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>,
+     <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="kw">max</span>(simData<span class="op">$</span>NumVar1, simData<span class="op">$</span>NumVar2)))  ## join dots with lines
+
+<span class="kw">lines</span>(simData<span class="op">$</span>NumVar4, simData<span class="op">$</span>NumVar2, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)  ## add another line</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-72-1.png" width="672" /> Observe que <code>lines()</code> permite que a gráfico poderá ser montado em níveis. Essa é uma funcionalidade muito útil, mas ainda limitada no sistema de gráficos do pacote básico. Veremos mais adiante um pacote mais poderoso implementado para explorar melhor esta possibilidade.</p>
+</div>
+<div id="grafico-de-bolhas" class="section level3">
+<h3><span class="header-section-number">8.12.2</span> Gráfico de bolhas<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></h3>
+<p>Esse é um gráfico que incorpora nos pontos definidos pelas variáveis NumVar1 and NumVar2 a informação da variável NumVar3, usando seu valor para definir o tamanho do ponto a ser plotado.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">radius &lt;-<span class="st"> </span><span class="kw">sqrt</span>(simData<span class="op">$</span>NumVar3<span class="op">/</span>pi)
+<span class="kw">symbols</span>(simData<span class="op">$</span>NumVar1, simData<span class="op">$</span>NumVar2, <span class="dt">circles =</span> radius, <span class="dt">inches =</span> <span class="fl">0.25</span>, <span class="dt">fg =</span> <span class="st">&quot;white&quot;</span>, 
+    <span class="dt">bg =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Tamanho dado por NumVar3&quot;</span>)</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
+</div>
+<div id="grafico-de-pares" class="section level3">
+<h3><span class="header-section-number">8.12.3</span> Gráfico de pares</h3>
+<p>Finalmente, um gráfico de pontos (Scatterplot) na forma de uma matriz <em>simétrica</em> que apresenta a correlação espacial entre os pares das variáveis numéricas, coloridas por uma variável discreta.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pairs</span>(simData[, <span class="dv">4</span><span class="op">:</span><span class="dv">7</span>], <span class="dt">col =</span> simData<span class="op">$</span>FacVar1, <span class="dt">pch =</span> <span class="dv">19</span>)</code></pre></div>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+<p>Na verdade, a medida que vamos incrementando a apresentação de mais informações nos gráficos, os comandos passam a ganhar maior complexidade quando usamos apenas o pacote <code>base</code>. No próximo capítulo veremos um pacote especialmente implementado para lidar com essa problemática, facilitado em muito a criação de gráficos mais informativos.</p>
+
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Matejka2017">
+<p>Matejka, Justin, and George Fitzmaurice. 2017. “Same Stats, Different Graphs.” <em>Proceedings of the 2017 CHI Conference on Human Factors in Computing Systems - CHI ’17</em>, 1290–4. doi:<a href="https://doi.org/10.1145/3025453.3025912">10.1145/3025453.3025912</a>.</p>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Esse conteúdo foi adaptado do site <a href="http://bl.ocks.org/patilv/raw/7360425/" class="uri">http://bl.ocks.org/patilv/raw/7360425/</a>.<a href="criacao-de-graficos-basicos.html#fnref1">↩</a></p></li>
+<li id="fn2"><p><a href="http://flowingdata.com/2010/11/23/how-to-make-bubble-charts/" class="uri">http://flowingdata.com/2010/11/23/how-to-make-bubble-charts/</a><a href="criacao-de-graficos-basicos.html#fnref2">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="criacao-de-projetos-em-r.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="graficos-com-o-ggplot2.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/08-GraficosBase.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-IntroR.pdf", "bookdown-IntroR.epub"],
+"toc": {
+"collapse": "section",
+"scroll_highlight": true
+}
+});
+});
+</script>
+
+</body>
+
+</html>
