@@ -25,7 +25,7 @@
 <meta name="author" content="Eduardo F. Silva">
 
 
-<meta name="date" content="2017-10-26">
+<meta name="date" content="2017-10-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -119,6 +119,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#solucoes-ocultas"><i class="fa fa-check"></i>Soluções ocultas</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="sobre-o-autor.html"><a href="sobre-o-autor.html"><i class="fa fa-check"></i>Sobre o Autor</a></li>
+<li class="part"><span><b>Parte I</b></span></li>
 <li class="chapter" data-level="1" data-path="Introdução.html"><a href="Introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução ao R</a><ul>
 <li class="chapter" data-level="1.1" data-path="Introdução.html"><a href="Introdução.html#instalacao-e-configuracao"><i class="fa fa-check"></i><b>1.1</b> Instalação e Configuração</a></li>
 <li class="chapter" data-level="1.2" data-path="Introdução.html"><a href="Introdução.html#um-pouco-de-historia"><i class="fa fa-check"></i><b>1.2</b> Um pouco de história</a></li>
@@ -126,7 +127,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.4" data-path="Introdução.html"><a href="Introdução.html#iniciando-um-projeto"><i class="fa fa-check"></i><b>1.4</b> Iniciando um projeto</a></li>
 <li class="chapter" data-level="1.5" data-path="Introdução.html"><a href="Introdução.html#entendendo-os-pacotes-em-r"><i class="fa fa-check"></i><b>1.5</b> Entendendo os pacotes em R</a></li>
 </ul></li>
-<li class="part"><span><b>Parte I</b></span></li>
 <li class="chapter" data-level="2" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html"><i class="fa fa-check"></i><b>2</b> R Project - Conceitos Básicos</a><ul>
 <li class="chapter" data-level="2.1" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html#iniciando-pelo-basico"><i class="fa fa-check"></i><b>2.1</b> Iniciando pelo básico</a></li>
 <li class="chapter" data-level="2.2" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html#iniciando-uma-variavel-do-um-valor"><i class="fa fa-check"></i><b>2.2</b> Iniciando uma variável do um valor</a></li>
@@ -149,9 +149,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html"><i class="fa fa-check"></i><b>4</b> Estruturas de dados</a><ul>
 <li class="chapter" data-level="4.1" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#vetores"><i class="fa fa-check"></i><b>4.1</b> Vetores</a></li>
 <li class="chapter" data-level="4.2" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#criando-vetores"><i class="fa fa-check"></i><b>4.2</b> Criando Vetores</a></li>
-<li class="chapter" data-level="4.3" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#atributos-attributes"><i class="fa fa-check"></i><b>4.3</b> Atributos (Attributes)</a></li>
-<li class="chapter" data-level="4.4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#misturando-objetos"><i class="fa fa-check"></i><b>4.4</b> Misturando Objetos</a></li>
-<li class="chapter" data-level="4.5" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#coercao-explicita"><i class="fa fa-check"></i><b>4.5</b> Coerção explícita</a></li>
+<li class="chapter" data-level="4.3" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#misturando-objetos"><i class="fa fa-check"></i><b>4.3</b> Misturando Objetos</a></li>
+<li class="chapter" data-level="4.4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#coercao-explicita"><i class="fa fa-check"></i><b>4.4</b> Coerção explícita</a></li>
+<li class="chapter" data-level="4.5" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#atributos-attributes"><i class="fa fa-check"></i><b>4.5</b> Atributos (Attributes)</a></li>
 <li class="chapter" data-level="4.6" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#matrizes"><i class="fa fa-check"></i><b>4.6</b> Matrizes</a></li>
 <li class="chapter" data-level="4.7" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#cbind-ing-and-rbind-ing"><i class="fa fa-check"></i><b>4.7</b> <em>cbind-ing</em> and <em>rbind-ing</em></a></li>
 <li class="chapter" data-level="4.8" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#listas-list"><i class="fa fa-check"></i><b>4.8</b> Listas (list)</a></li>
@@ -336,22 +336,22 @@ simData =<span class="st"> </span><span class="kw">data.frame</span>(FacVar1, Fa
 <div id="grafico-de-pontos-scatter" class="section level3">
 <h3><span class="header-section-number">8.4.1</span> Gráfico de pontos (scatter)</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>NumVar1, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>)  ## Index plot</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
 </div>
 <div id="histograma" class="section level3">
 <h3><span class="header-section-number">8.4.2</span> Histograma</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">hist</span>(simData<span class="op">$</span>NumVar1)  ## histogram</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-49-1.png" width="672" /></p>
 </div>
 <div id="curva-da-densidade-de-probabilidade" class="section level3">
 <h3><span class="header-section-number">8.4.3</span> Curva da densidade de probabilidade</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">density</span>(simData<span class="op">$</span>NumVar1))  ## Kernel density plot</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-50-1.png" width="672" /></p>
 </div>
 <div id="boxplot" class="section level3">
 <h3><span class="header-section-number">8.4.4</span> Boxplot</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(simData<span class="op">$</span>NumVar1)  ## box plot</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 </div>
 </div>
 <div id="variavel-categorica-ou-discreta" class="section level2">
@@ -359,14 +359,14 @@ simData =<span class="st"> </span><span class="kw">data.frame</span>(FacVar1, Fa
 <div id="grafico-de-barras-total" class="section level3">
 <h3><span class="header-section-number">8.5.1</span> Gráfico de barras (Total)</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>FacVar3)  ## bar plot</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-52-1.png" width="672" /></p>
 </div>
 </div>
 <div id="duas-variaveis-continuas" class="section level2">
 <h2><span class="header-section-number">8.6</span> Duas Variáveis contínuas</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>NumVar1, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="kw">max</span>(simData<span class="op">$</span>NumVar1, simData<span class="op">$</span>NumVar2)))  ## index plot with one variable
 <span class="kw">lines</span>(simData<span class="op">$</span>NumVar2, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)  ## add another variable</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
 <div id="grafico-de-densidade-de-probabilidade-density-plots" class="section level3">
 <h3><span class="header-section-number">8.6.1</span> Gráfico de densidade de probabilidade (density plots)</h3>
 <p>Exemplo de <a href="https://stat.ethz.ch/pipermail/r-help/2006-August/111865.html" class="uri">https://stat.ethz.ch/pipermail/r-help/2006-August/111865.html</a>, onde um gráfico “vazio” é produzido e depois preeenchido com linhas (função <code>lines()</code>).</p>
@@ -376,12 +376,12 @@ dv2 =<span class="st"> </span><span class="kw">density</span>(simData<span class
     <span class="dt">ylab =</span> <span class="st">&quot;Density&quot;</span>)
 <span class="kw">lines</span>(dv1, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)
 <span class="kw">lines</span>(dv2, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-54-1.png" width="672" /></p>
 </div>
 <div id="grafico-de-pontos-xy-scatterplots" class="section level3">
 <h3><span class="header-section-number">8.6.2</span> Gráfico de pontos x,y (scatterplots)</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>NumVar1, simData<span class="op">$</span>NumVar2)</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-55-1.png" width="672" /></p>
 </div>
 </div>
 <div id="duas-variaves-categoricas" class="section level2">
@@ -389,25 +389,25 @@ dv2 =<span class="st"> </span><span class="kw">density</span>(simData<span class
 <div id="mosaico-mosaic-plot" class="section level3">
 <h3><span class="header-section-number">8.7.1</span> Mosaico (Mosaic plot)</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="kw">table</span>(simData<span class="op">$</span>FacVar2, simData<span class="op">$</span>FacVar3))</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-56-1.png" width="672" /></p>
 </div>
 <div id="grafico-de-barras-barplots" class="section level3">
 <h3><span class="header-section-number">8.7.2</span> Gráfico de Barras (barplots)</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">bartable =<span class="st"> </span><span class="kw">table</span>(simData<span class="op">$</span>FacVar2, simData<span class="op">$</span>FacVar3)  ## get the cross tab
 <span class="kw">barplot</span>(bartable, <span class="dt">beside =</span> <span class="ot">TRUE</span>, <span class="dt">legend =</span> <span class="kw">levels</span>(<span class="kw">unique</span>(simData<span class="op">$</span>FacVar2)))  ## plot</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-57-1.png" width="672" /></p>
 </div>
 <div id="barras-empillhadas-stacked" class="section level3">
 <h3><span class="header-section-number">8.7.3</span> Barras Empillhadas (stacked)</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(bartable, <span class="dt">legend =</span> <span class="kw">levels</span>(<span class="kw">unique</span>(simData<span class="op">$</span>FacVar2)))  ## stacked</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-58-1.png" width="672" /></p>
 </div>
 <div id="barras-empillhadas-100-stacked-100" class="section level3">
 <h3><span class="header-section-number">8.7.4</span> Barras Empillhadas 100% (stacked 100%)</h3>
 <p>Transformando a tabela para proporções</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(<span class="kw">prop.table</span>(bartable, <span class="dv">2</span>) <span class="op">*</span><span class="st"> </span><span class="dv">100</span>,
         <span class="dt">legend =</span> <span class="kw">levels</span>(<span class="kw">unique</span>(simData<span class="op">$</span>FacVar2)))  ## usando prop.table</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-59-1.png" width="672" /></p>
 </div>
 </div>
 <div id="duas-variaveis-uma-categorica-e-outra-numerica" class="section level2">
@@ -415,7 +415,7 @@ dv2 =<span class="st"> </span><span class="kw">density</span>(simData<span class
 <div id="box-plots-variaveis-numericas-por-categoria" class="section level3">
 <h3><span class="header-section-number">8.8.1</span> Box plots: variáveis numéricas por categoria</h3>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>FacVar1, simData<span class="op">$</span>NumVar1)</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-60-1.png" width="672" /></p>
 </div>
 <div id="grafico-de-densidade-de-probabilidade-por-categoria" class="section level3">
 <h3><span class="header-section-number">8.8.2</span> Gráfico de densidade de probabilidade por categoria</h3>
@@ -432,7 +432,7 @@ dv4 =<span class="st"> </span><span class="kw">density</span>(level2<span class=
 
 <span class="kw">lines</span>(dv3, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)
 <span class="kw">lines</span>(dv4, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-62-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-61-1.png" width="672" /></p>
 </div>
 <div id="media-de-uma-variavel-numerica-considerando-sua-categoria" class="section level3">
 <h3><span class="header-section-number">8.8.3</span> Média de uma variável numérica considerando sua categoria</h3>
@@ -447,10 +447,10 @@ meanagg</code></pre></div>
 ## 3 levelIII 1010.3125
 ## 4  levelIV 1006.7492</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dotchart</span>(meanagg<span class="op">$</span>x, <span class="dt">labels =</span> meanagg<span class="op">$</span>Group.<span class="dv">1</span>)  ## Dot Chart </code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-63-1.png" width="672" /></p>
 <p>Gráfico de barras usando a média</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">barplot</span>(meanagg<span class="op">$</span>x, <span class="dt">names.arg =</span> meanagg<span class="op">$</span>Group.<span class="dv">1</span>)  ## Bar plot </code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-64-1.png" width="672" /></p>
 <blockquote>
 <p>Questão: O gráfico anterior é aproproado para comparar as médias (um valor pontual)? Escolha um gráfico melhor :)</p>
 </blockquote>
@@ -468,7 +468,7 @@ bar2table =<span class="st"> </span><span class="kw">table</span>(level2<span cl
 
 <span class="kw">barplot</span>(bar2table, <span class="dt">beside =</span> <span class="ot">TRUE</span>, <span class="dt">main =</span> <span class="st">&quot;FacVar1=level2&quot;</span>,
         <span class="dt">legend =</span> <span class="kw">levels</span>(<span class="kw">unique</span>(level2<span class="op">$</span>FacVar2)))</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-65-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)) <span class="co">#retornando ao normal</span></code></pre></div>
 </div>
 <div id="tres-variaveis-uma-numerica-e-duas-categoricas" class="section level2">
@@ -477,7 +477,7 @@ bar2table =<span class="st"> </span><span class="kw">table</span>(level2<span cl
 <h3><span class="header-section-number">8.10.1</span> Boxplot considerando a interação entre as duas variáveis categóricas</h3>
 <p>Considerando que cada variável aleatória tem 3 categorias, existem seis pares possíves, cada um podendo influenciar a variável contínua de maneira distinta.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">boxplot</span>(NumVar1 <span class="op">~</span><span class="st"> </span><span class="kw">interaction</span>(FacVar1, FacVar2), <span class="dt">data =</span> simData)</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-66-1.png" width="672" /></p>
 </div>
 <div id="media-da-variavel-numerica-para-cada-par-de-interacao-das-variaveis-categoricas" class="section level3">
 <h3><span class="header-section-number">8.10.2</span> Média da variável numérica para cada par de interação das variáveis categóricas</h3>
@@ -496,14 +496,14 @@ meanaggg</code></pre></div>
 ## 4  level2  levelB  989.9144      blue
 ## 6  level2  levelC 1004.0450 darkgreen</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">dotchart</span>(meanaggg<span class="op">$</span>x, <span class="dt">labels =</span> meanaggg<span class="op">$</span>Group.<span class="dv">2</span>, <span class="dt">groups =</span> meanaggg<span class="op">$</span>Group.<span class="dv">1</span>, <span class="dt">color =</span> meanaggg<span class="op">$</span>color)  ## dotchart</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-67-1.png" width="672" /></p>
 </div>
 <div id="grafico-de-interacao-interaction-plot" class="section level3">
 <h3><span class="header-section-number">8.10.3</span> Gráfico de interação (interaction plot)</h3>
 <p>Uma categoria <em>eixo x</em> e a outra no símbolo utilizado.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">interaction.plot</span>(meanaggg<span class="op">$</span>Group.<span class="dv">2</span>, meanaggg<span class="op">$</span>Group.<span class="dv">1</span>, meanaggg<span class="op">$</span>x, <span class="dt">type =</span> <span class="st">&quot;b&quot;</span>,
                  <span class="dt">col =</span> <span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">2</span>), <span class="dt">pch =</span> <span class="kw">c</span>(<span class="dv">18</span>, <span class="dv">24</span>))  ## interaction plot - line plots of means</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-68-1.png" width="672" /></p>
 </div>
 <div id="grafico-de-barras" class="section level3">
 <h3><span class="header-section-number">8.10.4</span> Gráfico de barras</h3>
@@ -522,7 +522,7 @@ level2 =<span class="st"> </span>meanaggg[meanaggg<span class="op">$</span>Group
 
 <span class="kw">barplot</span>(level1<span class="op">$</span>x, <span class="dt">names.arg =</span> level1<span class="op">$</span>Group.<span class="dv">2</span>, <span class="dt">main =</span> <span class="st">&quot;FacVar1=level1&quot;</span>)
 <span class="kw">barplot</span>(level2<span class="op">$</span>x, <span class="dt">names.arg =</span> level2<span class="op">$</span>Group.<span class="dv">2</span>, <span class="dt">main =</span> <span class="st">&quot;FacVar1=level2&quot;</span>)</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">par</span>(<span class="dt">mfrow =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</code></pre></div>
 </div>
 </div>
@@ -533,11 +533,11 @@ level2 =<span class="st"> </span>meanaggg[meanaggg<span class="op">$</span>Group
 <p>Aqui a cor é utilizada para identificar o <em>valor</em> da variável categorica</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(simData<span class="op">$</span>NumVar1, simData<span class="op">$</span>NumVar2, <span class="dt">col =</span> simData<span class="op">$</span>FacVar1)
 <span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">levels</span>(simData<span class="op">$</span>FacVar1), <span class="dt">fill =</span> simData<span class="op">$</span>FacVar1)</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-70-1.png" width="672" /></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Usando pontos sólidos para melhorar a visiualização</span>
 <span class="kw">plot</span>(simData<span class="op">$</span>NumVar1, simData<span class="op">$</span>NumVar2, <span class="dt">col =</span> simData<span class="op">$</span>FacVar1, <span class="dt">pch =</span> <span class="dv">19</span>)
 <span class="kw">legend</span>(<span class="st">&quot;topright&quot;</span>, <span class="kw">levels</span>(simData<span class="op">$</span>FacVar1), <span class="dt">fill =</span> simData<span class="op">$</span>FacVar1)</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-71-2.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-70-2.png" width="672" /></p>
 </div>
 </div>
 <div id="tres-variaveis-numericas" class="section level2">
@@ -549,7 +549,7 @@ level2 =<span class="st"> </span>meanaggg[meanaggg<span class="op">$</span>Group
      <span class="dt">ylim =</span> <span class="kw">c</span>(<span class="dv">0</span>, <span class="kw">max</span>(simData<span class="op">$</span>NumVar1, simData<span class="op">$</span>NumVar2)))  ## join dots with lines
 
 <span class="kw">lines</span>(simData<span class="op">$</span>NumVar4, simData<span class="op">$</span>NumVar2, <span class="dt">type =</span> <span class="st">&quot;o&quot;</span>, <span class="dt">lty =</span> <span class="dv">2</span>, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)  ## add another line</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-72-1.png" width="672" /> Observe que <code>lines()</code> permite que a gráfico poderá ser montado em níveis. Essa é uma funcionalidade muito útil, mas ainda limitada no sistema de gráficos do pacote básico. Veremos mais adiante um pacote mais poderoso implementado para explorar melhor esta possibilidade.</p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-71-1.png" width="672" /> Observe que <code>lines()</code> permite que a gráfico poderá ser montado em níveis. Essa é uma funcionalidade muito útil, mas ainda limitada no sistema de gráficos do pacote básico. Veremos mais adiante um pacote mais poderoso implementado para explorar melhor esta possibilidade.</p>
 </div>
 <div id="grafico-de-bolhas" class="section level3">
 <h3><span class="header-section-number">8.12.2</span> Gráfico de bolhas<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a></h3>
@@ -557,13 +557,13 @@ level2 =<span class="st"> </span>meanaggg[meanaggg<span class="op">$</span>Group
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">radius &lt;-<span class="st"> </span><span class="kw">sqrt</span>(simData<span class="op">$</span>NumVar3<span class="op">/</span>pi)
 <span class="kw">symbols</span>(simData<span class="op">$</span>NumVar1, simData<span class="op">$</span>NumVar2, <span class="dt">circles =</span> radius, <span class="dt">inches =</span> <span class="fl">0.25</span>, <span class="dt">fg =</span> <span class="st">&quot;white&quot;</span>, 
     <span class="dt">bg =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Tamanho dado por NumVar3&quot;</span>)</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-72-1.png" width="672" /></p>
 </div>
 <div id="grafico-de-pares" class="section level3">
 <h3><span class="header-section-number">8.12.3</span> Gráfico de pares</h3>
 <p>Finalmente, um gráfico de pontos (Scatterplot) na forma de uma matriz <em>simétrica</em> que apresenta a correlação espacial entre os pares das variáveis numéricas, coloridas por uma variável discreta.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">pairs</span>(simData[, <span class="dv">4</span><span class="op">:</span><span class="dv">7</span>], <span class="dt">col =</span> simData<span class="op">$</span>FacVar1, <span class="dt">pch =</span> <span class="dv">19</span>)</code></pre></div>
-<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+<p><img src="bookdown-IntroR_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
 <p>Na verdade, a medida que vamos incrementando a apresentação de mais informações nos gráficos, os comandos passam a ganhar maior complexidade quando usamos apenas o pacote <code>base</code>. No próximo capítulo veremos um pacote especialmente implementado para lidar com essa problemática, facilitado em muito a criação de gráficos mais informativos.</p>
 
 </div>

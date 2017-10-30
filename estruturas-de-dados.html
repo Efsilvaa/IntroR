@@ -25,7 +25,7 @@
 <meta name="author" content="Eduardo F. Silva">
 
 
-<meta name="date" content="2017-10-26">
+<meta name="date" content="2017-10-30">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -119,6 +119,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html#solucoes-ocultas"><i class="fa fa-check"></i>Soluções ocultas</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="sobre-o-autor.html"><a href="sobre-o-autor.html"><i class="fa fa-check"></i>Sobre o Autor</a></li>
+<li class="part"><span><b>Parte I</b></span></li>
 <li class="chapter" data-level="1" data-path="Introdução.html"><a href="Introdução.html"><i class="fa fa-check"></i><b>1</b> Introdução ao R</a><ul>
 <li class="chapter" data-level="1.1" data-path="Introdução.html"><a href="Introdução.html#instalacao-e-configuracao"><i class="fa fa-check"></i><b>1.1</b> Instalação e Configuração</a></li>
 <li class="chapter" data-level="1.2" data-path="Introdução.html"><a href="Introdução.html#um-pouco-de-historia"><i class="fa fa-check"></i><b>1.2</b> Um pouco de história</a></li>
@@ -126,7 +127,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.4" data-path="Introdução.html"><a href="Introdução.html#iniciando-um-projeto"><i class="fa fa-check"></i><b>1.4</b> Iniciando um projeto</a></li>
 <li class="chapter" data-level="1.5" data-path="Introdução.html"><a href="Introdução.html#entendendo-os-pacotes-em-r"><i class="fa fa-check"></i><b>1.5</b> Entendendo os pacotes em R</a></li>
 </ul></li>
-<li class="part"><span><b>Parte I</b></span></li>
 <li class="chapter" data-level="2" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html"><i class="fa fa-check"></i><b>2</b> R Project - Conceitos Básicos</a><ul>
 <li class="chapter" data-level="2.1" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html#iniciando-pelo-basico"><i class="fa fa-check"></i><b>2.1</b> Iniciando pelo básico</a></li>
 <li class="chapter" data-level="2.2" data-path="ConceitosBasicos.html"><a href="ConceitosBasicos.html#iniciando-uma-variavel-do-um-valor"><i class="fa fa-check"></i><b>2.2</b> Iniciando uma variável do um valor</a></li>
@@ -149,9 +149,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html"><i class="fa fa-check"></i><b>4</b> Estruturas de dados</a><ul>
 <li class="chapter" data-level="4.1" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#vetores"><i class="fa fa-check"></i><b>4.1</b> Vetores</a></li>
 <li class="chapter" data-level="4.2" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#criando-vetores"><i class="fa fa-check"></i><b>4.2</b> Criando Vetores</a></li>
-<li class="chapter" data-level="4.3" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#atributos-attributes"><i class="fa fa-check"></i><b>4.3</b> Atributos (Attributes)</a></li>
-<li class="chapter" data-level="4.4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#misturando-objetos"><i class="fa fa-check"></i><b>4.4</b> Misturando Objetos</a></li>
-<li class="chapter" data-level="4.5" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#coercao-explicita"><i class="fa fa-check"></i><b>4.5</b> Coerção explícita</a></li>
+<li class="chapter" data-level="4.3" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#misturando-objetos"><i class="fa fa-check"></i><b>4.3</b> Misturando Objetos</a></li>
+<li class="chapter" data-level="4.4" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#coercao-explicita"><i class="fa fa-check"></i><b>4.4</b> Coerção explícita</a></li>
+<li class="chapter" data-level="4.5" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#atributos-attributes"><i class="fa fa-check"></i><b>4.5</b> Atributos (Attributes)</a></li>
 <li class="chapter" data-level="4.6" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#matrizes"><i class="fa fa-check"></i><b>4.6</b> Matrizes</a></li>
 <li class="chapter" data-level="4.7" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#cbind-ing-and-rbind-ing"><i class="fa fa-check"></i><b>4.7</b> <em>cbind-ing</em> and <em>rbind-ing</em></a></li>
 <li class="chapter" data-level="4.8" data-path="estruturas-de-dados.html"><a href="estruturas-de-dados.html#listas-list"><i class="fa fa-check"></i><b>4.8</b> Listas (list)</a></li>
@@ -319,27 +319,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
  x</code></pre></div>
 <pre><code>##  [1] 0 0 0 0 0 0 0 0 0 0</code></pre>
 </div>
-<div id="atributos-attributes" class="section level2">
-<h2><span class="header-section-number">4.3</span> Atributos (Attributes)</h2>
-<p>Os objetos em possuem vários atributos:</p>
-<pre><code>-   nomes, dimnames
--   dimensão (e.g. matrizes, arrays)
--   classe
--   comprimento
--   outras atributos definidos pelo usuário/metadata</code></pre>
-<p>O nome dos atributos de um objeto pode ser acessado usando a função <code>attributes()</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">attributes</span>(x)</code></pre></div>
-<pre><code>## NULL</code></pre>
-</div>
 <div id="misturando-objetos" class="section level2">
-<h2><span class="header-section-number">4.4</span> Misturando Objetos</h2>
+<h2><span class="header-section-number">4.3</span> Misturando Objetos</h2>
 <p>Quando objetos diferente são misturados em um vetor, a <strong>coerção</strong> ajusta os tipos de modo que todos elementos mantenham sejam da mesma classe.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="fl">1.7</span>, <span class="st">&quot;a&quot;</span>)   ## character
  y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>, <span class="dv">2</span>)    ## numeric
  y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="ot">TRUE</span>)  ## character</code></pre></div>
 </div>
 <div id="coercao-explicita" class="section level2">
-<h2><span class="header-section-number">4.5</span> Coerção explícita</h2>
+<h2><span class="header-section-number">4.4</span> Coerção explícita</h2>
 <p>Objetos de uma classe podem ser sua classe alterada usando as funções <code>as.*()</code></p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> x &lt;-<span class="st"> </span><span class="dv">0</span><span class="op">:</span><span class="dv">6</span>
  <span class="kw">class</span>(x)          <span class="co"># &quot;integer&quot;</span></code></pre></div>
@@ -350,7 +338,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <pre><code>## [1] FALSE  TRUE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> <span class="kw">as.character</span>(x)   <span class="co"># &quot;0&quot; &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot; &quot;6&quot;</span></code></pre></div>
 <pre><code>## [1] &quot;0&quot; &quot;1&quot; &quot;2&quot; &quot;3&quot; &quot;4&quot; &quot;5&quot; &quot;6&quot;</code></pre>
-<p>Coerções não permitidas geram <code>NA</code> (Não avaliado).</p>
+<p>Coerções não permitidas geram <code>NA</code> (Não avaliado/Não disponível).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;a&quot;</span>, <span class="st">&quot;b&quot;</span>, <span class="st">&quot;c&quot;</span>)
  <span class="kw">as.numeric</span>(x)</code></pre></div>
 <pre><code>## Warning: NAs introduzidos por coerção</code></pre>
@@ -360,6 +348,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> <span class="kw">as.complex</span>(x)</code></pre></div>
 <pre><code>## Warning: NAs introduzidos por coerção</code></pre>
 <pre><code>## [1] NA NA NA</code></pre>
+</div>
+<div id="atributos-attributes" class="section level2">
+<h2><span class="header-section-number">4.5</span> Atributos (Attributes)</h2>
+<p>Os objetos em possuem vários atributos:</p>
+<pre><code>-   nomes, dimnames
+-   dimensão (e.g. matrizes, arrays)
+-   classe
+-   comprimento
+-   outras atributos definidos pelo usuário/metadata</code></pre>
+<p>O nome dos atributos de um objeto pode ser acessado usando a função <code>attributes()</code>.</p>
 </div>
 <div id="matrizes" class="section level2">
 <h2><span class="header-section-number">4.6</span> Matrizes</h2>
@@ -490,7 +488,7 @@ x</code></pre></div>
 <p>Data frames é uma estrutura de dados usada para armazenar dados em tabela. A diferença para matriz é que em data frames cada coluna pode conter um tipo de vaiável. Ou seja, é simplesmente uma <strong>tabela</strong></p>
 <ul>
 <li><p>Pode ser visto como um caso especial de lista onde todos os elementos da lista possuem o mesmo comprimento.</p></li>
-<li><p>Cada elemento da lista é na verdade uma coluna de uma tabela, e o comprimento decada elemnto da lista o número de linhas da tabela.</p></li>
+<li><p>Cada elemento da lista é na verdade uma coluna de uma tabela, e o comprimento de cada elemento da lista o número de linhas da tabela.</p></li>
 <li><p>Diferente das matrizes, data frames podem armazenar diferentes classes de objetos, uma em cada coluna (como uma lista); Todos os elementos das matrizes são da mesma classe</p></li>
 <li><p>Data frames possuem um atributo especial chamado <code>row.names</code></p></li>
 <li><p>Data frames é o formato normalmente utilizado na importação de dados, resultado das funções <code>read.table()</code> ou <code>read.csv()</code></p></li>
