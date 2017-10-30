@@ -2,7 +2,7 @@
 #Curso IntroR PET
 #Scrit R Galton
 
-galton <- read.csv("https://efsilvaa.github.io/IntroR/galton.csv")
+galton <- read.csv("https://efsilvaa.github.io/IntroR/dados/galton.csv")
 
 library(ggplot2)
 
