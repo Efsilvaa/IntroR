@@ -1,11 +1,15 @@
 #Prof. Eduardo F. Silva
-#Curso IntroR PET
+#Introdução ao R
 #Scrit R Galton
 
-galton <- read.csv("https://efsilvaa.github.io/IntroR/dados/galton.csv")
-
+# Carrendo os pacotes ----
 library(ggplot2)
 
+# Carregando os dados ----
+galton <- read.csv("https://efsilvaa.github.io/IntroR/dados/galton.csv")
+
+
+# Visualizando os Dados ----
 ggplot(data= galton,aes(x = father-mean(father), y = height -mean(height))) +
   geom_point(alpha = .2) +
   stat_smooth(method = "lm")
